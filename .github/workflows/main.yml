@@ -45,12 +45,12 @@ on:
           - 6.1.x-android14
           - 6.6.x-android15
           - 6.12.x-android16
-        default: All
+        default: 6.6.x-android15
       os_patch_level:
         description: "Patch date (YYYY-MM), kernel sublevel, lts, or All (no filter)"
         required: true
         type: string
-        default: All
+        default: 118
       page_size:
         description: "ARM64 page size. 16k requires explicitly selecting Kernel Version 6.1.x-android14, 6.6.x-android15 or 6.12.x-android16 (All is rejected)"
         type: choice
@@ -61,7 +61,7 @@ on:
       brand_name:
         description: "Kernel Branding (empty = stock version string)"
         type: string
-        default: Wild
+        default: Sun
       keep_kmi:
         description: "Keep stock KMI generation suffix in kernel version (fix #265)"
         type: boolean
@@ -86,7 +86,7 @@ on:
           - KowSU
           - No Root
           - All (KernelSU-Next + KernelSU + ReSukiSU)
-        default: All (KernelSU-Next + KernelSU + ReSukiSU)
+        default: KernelSU-Next
       use_susfs:
         description: "SUSFS"
         type: boolean
@@ -106,11 +106,11 @@ on:
       use_ds:
         description: "DroidSpaces"
         type: boolean
-        default: true
+        default: false
       use_ntsync:
         description: "NTSync"
         type: boolean
-        default: true
+        default: false
       use_ptrace:
         description: "Ptrace Patch"
         type: boolean
